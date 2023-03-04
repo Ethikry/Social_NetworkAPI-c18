@@ -105,7 +105,7 @@ const thoughtsController = {
       const dbThoughtData = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
         { $pull: { reactions: { reactionId: req.params.reactionId } } },
-        { new: true }
+        { runValidators: true, new: true }
       );
       if (!dbThoughtData) {
         return res.status(404).json({

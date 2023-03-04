@@ -93,8 +93,7 @@ const usersController = {
           .status(404)
           .json({ message: `No user found with ID of ${params.userId}` });
       }
-      await Thought.deleteMany({ _id: { $in: deletedUser.thoughts } });
-      res.json({ message: "User and thoughts have been deleted" });
+      res.json({ message: "User has been deleted" });
     } catch (err) {
       console.error(err);
       res.sendStatus(400);
