@@ -5,4 +5,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/social-network-api", {
   useUnifiedTopology: true,
 });
 
+// Display queries in terminal
+mongoose.set("debug", true);
+
 module.exports = mongoose.connection;
